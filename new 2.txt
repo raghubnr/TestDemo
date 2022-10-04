@@ -1,0 +1,33 @@
+Program: Assertion method Assert.assertArrayEquals() example.
+Java Class: org.junit.Assert
+
+Assert class provides a set of assertion methods useful for writing tests.
+
+assertArrayEquals() method checks that two object arrays are equal or not. 
+If they are not, it throws an AssertionError with the given message. 
+Incase if expected input and actual inputs are null, then they are considered to be equal. 
+It checks whether both arrays are having same number of elements or not, 
+and all elements should be same. It compares based on the order. 
+If mismatch in order results in failure.
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+ 
+public class MyAssertArrayEqualsTest {
+ 
+    @Test
+    public void myTestMethod(){
+        /**
+         * we are demonstrating the usage of assertArrayEquals()
+         * method here, so we are preparing input data here itself.
+         * In real scenario, we will consider the methods returned 
+         * value which suppose to be test, as a input. 
+         */
+        //assume that the below array represents expected result
+        String[] expectedOutput = {"apple", "mango", "grape"};
+        //assuem that the below array is returned from the method 
+        //to be tested.
+        String[] methodOutput = {"apple", "mango", "grape"};
+        assertArrayEquals(expectedOutput, methodOutput);
+    }
+}
